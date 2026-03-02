@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MIRROR | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+        <h2>🪞 MIRROR</h2>
+        <p class="subtitle">AI Campus Assistant</p>
+
+        <nav>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="index.html">Chat with MIRROR</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dash-main">
+
+        <header class="dash-header">
+            <h1>Welcome, Student 👋</h1>
+            <p>Your campus overview</p>
+        </header>
+
+        <!-- Student Profile -->
+        <section class="profile-card">
+            <div class="profile-avatar">👤</div>
+            <div>
+                <h3>Otieno Jonathan Daniels</h3>
+                <p>Reg No: 24ZAD109298</p>
+                <p>Course: Computer Science</p>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section class="cards">
+
+            <div class="card">
+                <h3>📅 Today’s Schedule</h3>
+                <ul>
+                    <li>10:00 AM – Data Structures</li>
+                    <li>2:00 PM – Web Development</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <ul id="dashboardReminders">
+    <li>Loading reminders...</li>
+</ul>
+   </div>
+
+            <div class="card">
+                <h3>📊 Productivity</h3>
+                <p>You are doing great 💪</p>
+                <p>2 tasks completed today</p>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+<script>
+const reminderList = document.getElementById("dashboardReminders");
+const reminders = JSON.parse(localStorage.getItem("reminders")) || [];
+
+reminderList.innerHTML = "";
+
+if (reminders.length === 0) {
+    reminderList.innerHTML = "<li>No reminders yet</li>";
+} else {
+    reminders.forEach(r => {
+        const li = document.createElement("li");
+        li.textContent = r;
+        reminderList.appendChild(li);
+    });
+}
+</script>
+
+</body>
+</html>

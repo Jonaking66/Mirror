@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MIRROR AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container chat-container">
+
+
+    <aside class="sidebar">
+        <div class="avatar">🪞</div>
+        <h2>MIRROR</h2>
+        <p>AI Campus Assistant</p>
+        <span class="status">● Online</span>
+        <a href="dashboard.html" class="dash-btn">⬅ Dashboard</a>
+    </aside>
+
+    <main class="chat-area">
+
+        <div class="chat-box" id="chatBox">
+            <div class="bot-message">
+                Hello 👋 I’m MIRROR. How can I help you today?
+            </div>
+        </div>
+
+        
+<div class="typing" id="typingIndicator">
+    MIRROR is typing...
+</div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Ask MIRROR..." />
+            <button onclick="sendMessage()">➤</button>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
